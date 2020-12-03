@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1563726371 source:d:\aic icpc\projects\stripe\main.cpp
+	<iostream>
+	<algorithm>
+	<set>
+
+1563726371 >
+
+1606492469 source:/media/PROG/ICPC/projects/Stripe/main.cpp
+	<bits/stdc++.h>
+
