@@ -65,6 +65,8 @@ void file(){
 int main(){
     quicken();
 
+    // happy coding :D
+    
     return 0;
 }
 
