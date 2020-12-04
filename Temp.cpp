@@ -8,6 +8,7 @@
 using namespace std;
 using namespace __gnu_cxx;
 
+#define pi               acos(-1)
 #define inc(a)           a.begin(), a.end()
 #define dec(a)           a.rbegin(), a.rend()
 #define Unique(n)        (n).erase(unique(inc(n)), (n).end())
