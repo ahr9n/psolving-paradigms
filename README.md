@@ -41,6 +41,6 @@
   
 ---
 
-## 5. [Other Techniques](5.Other-Techniques)
+### 5. [Other Techniques](5.Other-Techniques)
 
 ---
