@@ -2,22 +2,22 @@
 
 ## Contents:
 
-## 1. [Brute Force](1.Brute-Force)
+### 1. [Brute Force](1.Brute-Force)
   - [Iterative Brute Force](1.Brute-Force/1.1.Iterative-Brute-Force)
   - [Recursive Brute Force (Backtracking)](1.Brute-Force/1.2.Recursive-Brute-Force-(Backtracking))
   - [State-Space Search](1.Brute-Force/1.3.State-Space-Search)
   
 ---
 
-## 2. [Greedy](2.Greedy)
+### 2. [Greedy](2.Greedy)
 
 ---
 
-## 3. [Binary Search](3.Binary-Search)
+### 3. [Binary Search](3.Binary-Search)
 
 ---
 
-## 4. [Dynamic Programming](4.Dynamic-Programming)
+### 4. [Dynamic Programming](4.Dynamic-Programming)
   - [Max 1D Range Sum](4.Dynamic-Programming/01.Max-1D-Range-Sum)
   - [Max 2D Range Sum](4.Dynamic-Programming/02.Max-2D-Range-Sum)
   - [Longest Increasing Subsequence (LIS)](4.Dynamic-Programming/03.Longest-Increasing-Subsequence-(LIS))
