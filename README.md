@@ -1,6 +1,6 @@
 # PSolving-Paradigms (A good starting point, including prerequisites, in Dynamic Programming methods and techniques for Competitive Programmers).
 
-# Contents:
+## Contents:
 
 ## 1. [Brute Force](1.Brute-Force)
   - [Iterative Brute Force](1.Brute-Force/1.1.Iterative-Brute-Force)
