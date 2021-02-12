@@ -1,4 +1,4 @@
-# PSolving-Paradigms (A good starting point, including prerequisites, in Dynamic Programming methods and techniques for Competitive Programmers).
+<h1 align="center">PSolving Paradigms</h1>
 
 ## Contents:
 
