@@ -29,17 +29,17 @@ int main(){
     quicken();
 
     int t, n, m, k, l, r, mini, cur, i=0; cin >> t;
-	while(t--){
-		cin >> n >> m >> k;
+    while(t--){
+        cin >> n >> m >> k;
         l = r = cur = 0, mini = INT_MAX;
 
-		int arr[n+1];
+        int arr[n+1];
         map<int, int> mp;
-		arr[0] = 1, arr[1] = 2, arr[2] = 3;
+        arr[0] = 1, arr[1] = 2, arr[2] = 3;
         for(int i=3; i<=n; i++)
             arr[i] = (arr[i-1]+arr[i-2]+arr[i-3])%m +1;
 
-		while(l<=r && r<n){
+        while(l<=r && r<n){
             while(cur!=k && r<n){
                 if(arr[r]<=k) mp[arr[r]]++;
                 r++, cur = mp.size();
@@ -56,6 +56,6 @@ int main(){
         cout << "Case " << ++i << ": ";
         if(mini==INT_MAX) cout << "sequence nai" << endl;
         else cout << mini << endl;
-	}
+    }
 
 }
