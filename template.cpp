@@ -20,6 +20,9 @@ using namespace __gnu_cxx;
 typedef long long ll;
 typedef long double ld;
 
+int dx[] = {1, -1, 0, 0, -1, -1, 1, 1};
+int dy[] = {0, 0, 1, -1, -1, 1, -1, 1};
+
 const int N = 1e5 + 5, M = 1e6 + 5, OO = 0x3f3f3f3f;
 int n, m, k, ne, head[N], nxt[M], to[M], vis[N];
 
