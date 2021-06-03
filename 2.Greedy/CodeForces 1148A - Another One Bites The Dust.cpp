@@ -26,7 +26,6 @@ int main(){
     freopen("output.txt", "w", stdout);
     #endif /// ONLINE_JUDGE
 
-
     long long a, b, c;
     cin >> a >> b >> c;
 
