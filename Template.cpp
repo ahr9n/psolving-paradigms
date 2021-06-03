@@ -1,9 +1,7 @@
-/*  UntilDeathDoesUsApart
-    DO   NOT   GIVE   UP!
-*/
-
 #include <bits/stdc++.h>
 #include <ext/numeric>
+
+#pragma GCC optimize("Ofast")
 
 using namespace std;
 using namespace __gnu_cxx;
@@ -23,7 +21,7 @@ typedef long long ll;
 typedef long double ld;
 
 const int N = 1e5 + 5, M = 1e6 + 5, OO = 0x3f3f3f3f;
-int n, m, k, ne, head[N], nxt[M], to[M], u, v;
+int n, m, k, ne, head[N], nxt[M], to[M], vis[N];
 
 void init(){
     memset(head, -1, n*sizeof head[0]);
@@ -49,8 +47,24 @@ void dfs(int u){
         if(!vis[to[k]]) dfs(to[k]);
 }
 
+void DFS(int p){ /// iterative DFS
+    stack<int> st;
+    st.push(p);
+
+    vis[p] = 1;
+    while(!st.empty()){
+        int p = st.top();
+        st.pop();
+        for(int ch : adj[p]){
+            if(!vis[ch]) st.push(ch);
+            vis[ch] = 1;
+        }
+    }
+
+}
+
 int sieve(int n);
-unsigned long long pow(long long base, long long power);
+ll bigPow(ll base, ll power);
 long long gcd(long long a, long long b){ return a%b ? gcd(b, a%b) : b; }
 long long lcm(long long a, long long b){ return a*b/gcd(a, b); }
 
@@ -70,17 +84,14 @@ int main(){
     return 0;
 }
 
-unsigned long long pow(long long base, long long power){  /// mod?
-    if(power==0)
-        return 1;
-    if(power==1)
-        return base;
+ll bigPow(ll base, ll power){
+    if(power==0) return 1;
+    if(power==1) return base;
 
-    unsigned long long ans = pow(base, power/2); /// mod?
-    ans *= ans; /// ((ans%mod)*(ans%mod))%mod;
+    ll ans = bigPow(base, power/2);
+    ans = ((ans%MOD)*(ans%MOD))%MOD;
 
-    if(power&1)
-        return ans*base; /// ((ans%mod)*(base%mod))%mod;
+    if(power&1) return ((ans%MOD) * (base%MOD)) % MOD;
     return ans;
 }
 
