@@ -1,5 +1,14 @@
 <h1 align="center">PSolving Paradigms</h1>
 
+<div align="center">
+  
+  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/AHR9N/PSolving-Paradigms/pulls)
+  <img src="https://img.shields.io/github/languages/top/AHR9N/PSolving-Paradigms" />
+  [![license](https://img.shields.io/badge/License-MIT-red?logo=mit&style=flat-square)](https://github.com/AHR9N/PSolving-Paradigms/blob/main/LICENSE)
+  <img src="https://img.shields.io/github/languages/code-size/AHR9N/PSolving-Paradigms" />
+
+</div>
+
 ## Contents:
 
 ### 1. [Brute Force](1.Brute-Force)
