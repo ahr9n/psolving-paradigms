@@ -36,7 +36,7 @@
   - [Bitmasks](4.Dynamic-Programming/07.Bitmasks)
   - [Digits](4.Dynamic-Programming/08.Digits)
   - [Grids and Paths](4.Dynamic-Programming/09.Grids-and-Paths)
-  - [TSP](4.Dynamic-Programming/10.TSP)
+  - [Traveling Salesman Problem (TSP)](4.Dynamic-Programming/10.Traveling-Salesman-Problem-(TSP))
   - [Bitonic TSP](4.Dynamic-Programming/11.Bitonic-TSP)
   - [Strings](4.Dynamic-Programming/12.Strings)
   - [Tiling (Counting)](4.Dynamic-Programming/13.Tiling-(Counting))
