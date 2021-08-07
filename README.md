@@ -9,7 +9,11 @@
 
 </div>
 
-## Contents:
+An educational repository of common problems and their solutions in dynamic programming methods and techniques, including prerequisites (approaches of greedy, brute-force (iterative, recursive and state-space search) and binary search), for competitive programmers. Also, I attached a sheet of problems from several online judges (basic problems and extra) in details; difficulty, topics, hints and notes, in case you needed to solve.
+
+I tried my best to make my code clean and readable. Also, I made comments for unclear statements, as possible. I wish this will be helpful! Thank you!
+
+## Content:
 
 ### 1. [Brute Force](1.Brute-Force)
   - [Iterative Brute Force](1.Brute-Force/1.1.Iterative-Brute-Force)
