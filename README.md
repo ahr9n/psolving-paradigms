@@ -46,7 +46,8 @@
   - [DP speed-up with Divide and Conquer Optimization](4.Dynamic-Programming/17.DP-speed-up-with-Divide-and-Conquer-Optimization)
   - [DP speed-up with Knuth Optimization](4.Dynamic-Programming/18.DP-speed-up-with-Knuth-Optimization)
   - [DP speed-up with Data Structures](4.Dynamic-Programming/19.DP-speed-up-with-Data-Structures)
-  - [Non Classical](4.Dynamic-Programming/20.Non-Classical)
+  - [Building Up](4.Dynamic-Programming/20.Building-Up)
+  - [Non Classical](4.Dynamic-Programming/21.Non-Classical)
   
 ---
 
