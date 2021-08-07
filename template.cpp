@@ -26,88 +26,143 @@ int dy[] = {0, 0, 1, -1, -1, 1, -1, 1};
 const int N = 1e5 + 5, M = 1e6 + 5, OO = 0x3f3f3f3f;
 int n, m, k, ne, head[N], nxt[M], to[M], vis[N];
 
-void init(){
-    memset(head, -1, n*sizeof head[0]);
+void init() {
+    memset(head, -1, n * sizeof head[0]);
     ne = 0;
 }
 
-void addEdge(int f, int t){
+void addEdge(int f, int t) {
     nxt[ne] = head[f];
     to[ne] = t;
     head[f] = ne++;
 }
 
-void addBiEdge(int u, int v){
+void addBiEdge(int u, int v) {
     addEdge(u, v);
     addEdge(v, u);
 }
 
-void dfs(int u){
-    if(vis[u]) return;
+void dfs(int u) {
+    if (vis[u]) return;
     vis[u] = 1;
 
-    for(int k=head[u]; ~k; k=nxt[k])
-        if(!vis[to[k]]) dfs(to[k]);
+    for (int k = head[u]; ~k; k = nxt[k])
+        if (!vis[to[k]]) dfs(to[k]);
 }
 
-void DFS(int p){ /// iterative DFS
+void DFS(int p) { /// iterative DFS
     stack<int> st;
     st.push(p);
 
     vis[p] = 1;
-    while(!st.empty()){
+    while (!st.empty()) {
         int p = st.top();
         st.pop();
-        for(int ch : adj[p]){
-            if(!vis[ch]) st.push(ch);
+        for (int ch : adj[p]) {
+            if (!vis[ch]) st.push(ch);
             vis[ch] = 1;
         }
     }
-
 }
 
-int sieve(int n);
-ll bigPow(ll base, ll power);
-long long gcd(long long a, long long b){ return a%b ? gcd(b, a%b) : b; }
-long long lcm(long long a, long long b){ return a*b/gcd(a, b); }
+struct DSU {
+    int par[N], sz[N], sets[N], pos[N], tail[N], nxt[N], cnt;
 
-void quicken(){ ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0); }
-void file(){
+    void init(int n) {
+        memset(nxt, -1, n * sizeof nxt[0]);
+        iota(tail, tail + n, 0);
+        iota(par, par + n, 0);
+        iota(sets, sets + n, 0);
+        iota(pos, pos + n, 0);
+        fill(sz, sz + n, 1);
+        cnt = n;
+    }
+
+    int find(int x) {
+        if (par[x] == x) return x;
+        return par[x] = find(par[x]);
+    }
+
+    bool merge(int u, int v) {
+        u = find(u), v = find(v);
+        if (u == v) return false;
+
+        if (sz[u] < sz[v]) swap(u, v);
+        par[v] = u;
+        sz[u] += sz[v];
+
+        int p = pos[v];
+        pos[sets[p] = sets[--cnt]] = p;
+
+        int &t = tail[u];
+        nxt[t] = v;
+        t = tail[v];
+
+        return true;
+    }
+
+    string toString() {
+        stringstream ss;
+        ss << '[';
+        for (int i = 0; i < cnt; ++i) {
+            ss << '{';
+            for (int u = sets[i]; ~u; u = nxt[u])
+                ss << u << ",}"[!~nxt[u]];
+            ss << ",]"[i + 1 == cnt];
+        }
+        return ss.str();
+    }
+} dsu;
+
+int sieve(int n);
+
+ll bigPow(ll base, ll power);
+
+long long gcd(long long a, long long b) { return a % b ? gcd(b, a % b) : b; }
+
+long long lcm(long long a, long long b) { return a * b / gcd(a, b); }
+
+void quicken() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
+void file() {
 #ifdef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif /*ONLINE_JUDGE*/
 }
 
-int main(){
+int main() {
     quicken();
 
     // happy coding :D
-    
+
     return 0;
 }
 
-ll bigPow(ll base, ll power){
-    if(power==0) return 1;
-    if(power==1) return base;
+ll bigPow(ll base, ll power) {
+    if (power == 0) return 1;
+    if (power == 1) return base;
 
-    ll ans = bigPow(base, power/2);
-    ans = ((ans%MOD)*(ans%MOD))%MOD;
+    ll ans = bigPow(base, power / 2);
+    ans = ((ans % MOD) * (ans % MOD)) % MOD;
 
-    if(power&1) return ((ans%MOD) * (base%MOD)) % MOD;
+    if (power & 1) return ((ans % MOD) * (base % MOD)) % MOD;
     return ans;
 }
 
-int sieve(int n){
+int sieve(int n) {
     int c = 0;
-    vector<bool> isPrime(n+1, true);
+    vector<bool> isPrime(n + 1, true);
     isPrime[0] = isPrime[1] = 0;
 
-    for(long long i=2; i*i<=n; i++)
-        if(isPrime[i])
-            for(long long j=i*2; j<=n; j+=i)
+    for (long long i = 2; i * i <= n; i++)
+        if (isPrime[i])
+            for (long long j = i * 2; j <= n; j += i)
                 isPrime[j] = 0;
-    to(i, 0, n+1)
-        if(isPrime[i]) c++;
+    to(i, 0, n + 1)if (isPrime[i]) c++;
     return c; /// primeCount [1:n]
 }
